@@ -3,7 +3,7 @@ Jruby version 1.7.16
 Steps to run:
 1. rvm use jruby 1.7.16
 2. bundle install
-3. Create hsqql db via ant
+3. Download hsqldb via ant
 4. rake db:migrate
 5. gem install warbler
 6. warble executable war
