@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize_user, only: [:show, :edit, :update, :destroy]
   # GET /events
   # GET /events.json
   def index
@@ -70,5 +70,11 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:event_name, :event_location, :event_date, :user_id)
+    end
+
+    def authorize_user
+      unless (@event.user == current_user)
+        redirect_to events_path, notice: "Unauthorized Access.."
+      end
     end
 end
