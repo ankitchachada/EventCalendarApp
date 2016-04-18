@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :events
+  has_many :likes
+  has_many :liked_events, :through => :likes, :source => :event
 end

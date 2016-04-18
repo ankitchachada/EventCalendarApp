@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = current_user.events
+    @my_like_events = current_user.liked_events
   end
 
   # GET /events/1
@@ -62,7 +63,12 @@ class EventsController < ApplicationController
   end
 
   def like
-    #code..
+    if user_signed_in?
+      Like.create(user_id: current_user.id, event_id: params[:id])
+      redirect_to events_url
+    else
+      redirect_to  new_user_session_path , notice: 'Please sign in to express interest'
+    end
   end
 
   private

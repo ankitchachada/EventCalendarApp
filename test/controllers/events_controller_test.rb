@@ -47,3 +47,4 @@ class EventsControllerTest < ActionController::TestCase
     assert_redirected_to events_path
   end
 end
+  
