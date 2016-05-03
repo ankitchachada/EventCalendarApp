@@ -21,6 +21,7 @@ module Eventcalendar
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.action_controller.default_url_options = { :trailing_slash => true }
     config.active_record.raise_in_transactional_callbacks = true
   end
 end

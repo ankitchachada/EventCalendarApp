@@ -7,11 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= link_to "Home", root_path %> |
   <% if user_signed_in? %>
+  <%= link_to 'My Events Page', events_path %> |
     Signed in as <%= current_user.email %>. Not you?
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+  <% end %>
+  <br/>
+  <% if flash[:alert] %>
+    <p><%= flash[:alert] %></p>
+  <% else %>
+    <p id="notice"><%= flash[:notice] %></p>
   <% end %>
 <%= yield %>
 

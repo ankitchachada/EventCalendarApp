@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Listing My Liked Events</h1>
 
@@ -9,7 +8,6 @@
       <th>Event location</th>
       <th>Event date</th>
       <th>User</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -20,9 +18,6 @@
         <td><%= event.event_location %></td>
         <td><%= event.event_date %></td>
         <td><%= event.user.name %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,7 +33,7 @@
       <th>Event location</th>
       <th>Event date</th>
       <th>User</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -51,7 +46,6 @@
         <td><%= event.user.name %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
