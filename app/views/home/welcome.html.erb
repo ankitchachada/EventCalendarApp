@@ -18,7 +18,7 @@
         <td><%= event.event_name %></td>
         <td><%= event.event_location %></td>
         <td><%= event.event_date %></td>
-        <td><%= event.user_id %></td>
+        <td><%= event.user.try(:name) %></td>
         <td><%= link_to "Like", like_event_path(event), method: "post" %></td>
       </tr>
     <% end %>
